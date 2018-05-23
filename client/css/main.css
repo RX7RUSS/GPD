@@ -1,0 +1,9 @@
+body {
+  background-color: lightgrey;
+}
+.float-right {
+  float: right;
+}
+.title {
+  text-align: center;
+}
