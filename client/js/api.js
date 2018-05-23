@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<body>
-  <h3> API CHECK </h3>
-</body>
-<input id='api-container'>
-<script>
+var _data;
 
-  var ExoUrl = 'https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets&select=pl_hostname,ra,dec&order=dec&format=JSON'
+_GetAPI = () => {
+var ExoUrl = 'https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets&select=pl_hostname,ra,dec&order=dec&format=JSON'
 
   var ExamplePlanetDetails = 'https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets&format=JSON&select=&#42;&where=pl_hostname%20like%20%27HD%20142022%20A%27%20'
 
@@ -20,13 +16,14 @@
     xhr.send(null)
   }
 
-  _REQ('GET', ExoUrl, (data)=>{
+  REQ('GET', ExoUrl, (data)=>{
     console.log('All ExoPlanets Descovered:', data)
   })
 
-  _REQ('GET', ExamplePlanetDetails, (data)=>{
+  REQ('GET', ExamplePlanetDetails, (data)=>{
     console.log('Exoplanet Details:', data)
   })
 
-</script>
-<html/>
+}
+
+_GetAPI()
